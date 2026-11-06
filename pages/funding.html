@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="../styles.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Energy For All - Funding</title>
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="../index.html">The Issue</a></li>
+            <li><a href="policy.html">Our Policy</a></li>
+            <li><a href="funding.html">Funding</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h1 class="header">
+            Solar Grid Funding Calculations
+        </h1>
+    </div>
+
+    <main>
+        <h3>
+            Defining Variables
+        </h3>
+        <p>
+            <ul class="centered-list">
+                <li><b>P(m)</b> is the power used by residential homes based on m (month)</li>
+                <li><b>m</b> is the month (represented 1 - 12)</li>
+            </ul>
+        </p>
+
+        <h3>
+            Obtaining Data
+        </h3>
+        <p>
+            Using data from the <a href="https://www.eia.gov/totalenergy/data/browser/index.php?tbl=T02.02#/?f=M&start=202501&end=202512&charted=2-3-4-10-12">Energy Information Administration (EIA)</a> we were able to obtain data for Electricity Sales to Ultimate Customers in the Residential Sector
+            (Total amount of power consumed by private households that has been consumed and not resold) from Jan 2025 to Dec 2025.
+        </p>
+
+        <p>
+            Here is the Raw Data:
+        </p>
+
+        <img src="../img-src/image6.png" alt="Raw Data">
+
+        <p>
+            Using a conversion factor of 0.293071, we converted Trillion BTUs to Billion kWhs.
+        </p>
+
+        <h3>
+            Data Plotting and Regression
+        </h3>
+
+        <p>
+            Next we plot our data into Desmos and get the graph
+        </p>
+
+        <img src="../img-src/image7.png" alt="Graph">
+
+        <p>
+            Then we ran a regression, after testing many, we found that a sinusoidal regression is the best fit, as it has the highest coefficient of determination (R^2), meaning that it is the best fit for our data. 
+        </p>
+
+        <p>
+            Our equation is then such
+        </p>
+
+        <img src="../img-src/image1.png" alt="Regression Equation">
+
+        <p></p>
+
+        <img src="../img-src/image5.png" alt="Regression Graph">
+
+        <h3>
+            Calculating Total Power Use
+        </h3>
+
+        <p>
+            We can now integrate the function, our x-axis is time in months, while the y-axis is power consumption per month, Billion kWh/month.
+            By integrating, we multiply these units to get Billion kWh/month * month, which gives up Billion kWh, our total energy consumption for a specific time period.
+            If we integrate from 0 to 12, we get the total power consumption of the whole year.
+        </p>
+
+        <img src="../img-src/image2.png" alt="Integral Equation">
+
+        <p>
+            This translates to a residential sector annual power use of roughly <b>1.53 Trillion kWh</b>
+        </p>
+
+        <h3>
+            Accounting for Less-Than-Ideal Conditions
+        </h3>
+
+        <p>
+            Next we have to consider the median utility-scale solar capacity factor.
+            In layman’s terms, this tells us that a solar grid, through the whole year, will only make about 24.7% (<a href="https://www.eia.gov/todayinenergy/detail.php?id=39832">From the EIA</a> of the power that
+            it would make if it was making full power all day everyday for a full year. The reason this number is so low is because of nighttime, bad weather, and seasons,
+            which all negatively affect a solar panel’s performance.
+        </p>
+
+        <p>
+            The total production needed for a solar panel grid (in Trillions of kWh) would then be
+        </p>
+
+        <img src="../img-src/image3.png" alt="Total Production">
+
+        <p>
+            This is roughly <b>6.2 Trillion kWh</b>
+        </p>
+
+        <p>
+             To get the solar panel capacity needed we then need to divide our yearly energy use by the amount of hours in a year to yield a kW figure.
+        </p>
+
+        <img src="../img-src/image4.png" alt="Total Capacity">
+
+        <p>
+            This yields us about <b>707.8 million kW</b>, which is about <b>707.8 GigaWatts</b>
+        </p>
+
+        <h3>
+            Final Cost Calculations
+        </h3>
+
+        <p>
+            Now that we have our total solar capacity, we can now calculate the power generation infrastructure cost. For UPV (Utility-Scale Photovoltaic) systems,
+            which are used in large grid systems, combined with batteries for power storage at night, it would cost about <a href="https://www.energy.gov/cmei/systems/solar-photovoltaic-system-cost-benchmarks">$1.71 per Watt</a>
+            This translates to about <b>1.21 trillion dollars</b> in total panel and battery infrastructure costs.
+        </p>
+
+        <p><b>In short, the total cost to build a solar panel grid capable of storing energy for low light conditions and supplying power for the entire US would cost approximately 1.21 trillion US dollars.</b></p>
+
+    </main>
+</body>
+</html>
