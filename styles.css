@@ -1,0 +1,100 @@
+.header {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial;
+    font-size: 55px;
+}
+
+.essay {
+    text-indent: 50px;
+    font-family: Times New Roman;
+    font-size: 24px;
+    padding: 10px;
+    margin: 0px 300px;
+    text-align: left;
+}
+
+.italic {
+    font-style: italic;
+}
+h3 {
+    font-family: Arial;
+    font-style: Bold;
+    margin: 50px;
+    font-size: 30px;
+}
+
+p {
+    font-family: Arial;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+main {
+    font-family: Arial;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+body{
+    margin: 0px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url(image-src/launchbackground.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main ul {
+    font-family: Arial;
+    text-align: left;
+    padding: 10px 200px;
+    font-size: 20px;
+    list-style-position: inside;
+    max-width: fit-content;
+    margin: 0 auto;
+    list-style-type: "– ";
+}
+
+.navigation {
+    width: 100%;
+    display: block;
+}
+
+.navigation ul {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    list-style-type: none;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    display: block;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    font-family: Arial;
+}
+
+.navigation a:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+.image {
+    display: block;
+    margin: -200px auto 0 auto !important; 
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
+    height: auto;
+}
